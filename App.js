@@ -19,15 +19,17 @@ import {
 export default function App() {
   //setting the initial state
   const [enteredGoal, setEnteredGoal] = useState('');
+  const [courseGoals, setCourseGoals] = useState([]); //setting initial value as empty array
 
   const goalInputHandler = (enteredText) => {
     setEnteredGoal(enteredText);
   };
 
   const addGoalHandler = () => {
-    console.log(enteredGoal);
+    setCourseGoals((currentGoals) => [...currentGoals, enteredGoal]);
   };
 
+  // ['eat bf','join class','sleep','sleep in the class']
 
   return (
     <View style={styles.screen}>
@@ -36,11 +38,15 @@ export default function App() {
           placeholder="Goals/Tasks"
           style={styles.input}
           onChangeText={goalInputHandler()}
-          value = {enteredGoal}
+          value={enteredGoal}
         />
-        <Button title="ADD" onPress={addGoalHandler}/>
+        <Button title="ADD" onPress={addGoalHandler} />
       </View>
-      <View></View>
+      <View>
+        {courseGoals.map((goal) => (
+          <Text>{goal}</Text>
+        ))}
+      </View>
     </View>
   );
 }
@@ -56,5 +62,3 @@ const styles = StyleSheet.create({
   },
   input: {width: '80%', borderColor: 'black', borderWidth: 1, padding: 10},
 });
-
-export default App;
