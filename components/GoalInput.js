@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import {View, TextInput, Button} from 'react-native';
 
 const GoalInput = (props) => {
-
 //transferring the place of the state
   const [enteredGoal, setEnteredGoal] = useState('');
   const goalInputHandler = (enteredText) => {
@@ -35,7 +34,8 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderWidth: 1,
     padding: 10,
-  },
+  }
+
 });
 
 export default GoalInput;
