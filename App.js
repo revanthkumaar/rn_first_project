@@ -53,6 +53,7 @@ const styles = StyleSheet.create({
   listItem:{
     padding: 10,
     backgroundColor:'#ccc',
+    marginVertical:10,
     borderColor:'black',
     borderWidth: 1
   }
