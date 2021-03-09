@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, Button } from 'react-native';
+import React, {useState} from 'react';
+import {StyleSheet, Text, View, TextInput, Button} from 'react-native';
 
 export default function App() {
   const [enteredGoal, setEnteredGoal] = useState('');
@@ -10,7 +10,7 @@ export default function App() {
   };
 
   const addGoalHandler = () => {
-    setCourseGoals(currentGoals => [...currentGoals, enteredGoal]);
+    setCourseGoals((currentGoals) => [...currentGoals, enteredGoal]);
   };
 
   return (
@@ -25,7 +25,11 @@ export default function App() {
         <Button title="ADD" onPress={addGoalHandler} />
       </View>
       <View>
-        {courseGoals.map((goal) => <Text key={goal}>{goal}</Text>)}
+        {courseGoals.map((goal) => (
+          <View style={styles.listItem}> 
+            <Text key={goal}>{goal}</Text>
+          </View>
+        ))}
       </View>
     </View>
   );
@@ -33,17 +37,23 @@ export default function App() {
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 50
+    padding: 50,
   },
   inputContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   input: {
     width: '80%',
     borderColor: 'black',
     borderWidth: 1,
-    padding: 10
+    padding: 10,
+  },
+  listItem:{
+    padding: 10,
+    backgroundColor:'#ccc',
+    borderColor:'black',
+    borderWidth: 1
   }
 });
