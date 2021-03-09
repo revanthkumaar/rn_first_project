@@ -1,5 +1,4 @@
-
-/*import React from 'react';
+import React from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -19,63 +18,29 @@ import {
 
 export default function App(){
   return(
-    <View style={{padding:50}}>
-      <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center'}}>
+    <View style={styles.screen}>
+      <View style={styles.inputContainer}>
         <TextInput
           placeholder="Goals/Tasks"
-          style={{borderColor:'black',borderWidth:1,padding:10}}
+          style={styles.input}
         />
         <Button title="ADD"/>
       </View>
-
       <View>
-
       </View>
     </View>
-
 
   );
 }
 
-
-
 const styles = StyleSheet.create({
-  
+  screen: {
+    padding:50
+  },
+  inputContainer: {flexDirection:'row',justifyContent:'space-between',alignItems:'center'},
+  input: {width:'80%',borderColor:'black',borderWidth:1,padding:10}
 });
 
 export default App;
 
 
-*/
-
-
-import React from 'react';
-import { Text, View } from 'react-native';
-
-export default function App() {
-  return (
-    <View style={{ padding: 50, flexDirection:'row-reverse',width:'80%',height:300,justifyContent:'space-between',alignItems:'stretch'}}>
-      <View
-        style={{
-          backgroundColor: 'red'
-          }}
-      >
-        <Text>1</Text>
-      </View>
-      <View
-        style={{
-          backgroundColor: 'blue'
-        }}
-      >
-        <Text>2</Text>
-      </View>
-      <View
-        style={{
-          backgroundColor: 'green'
-        }}
-      >
-        <Text>3</Text>
-      </View>
-    </View>
-  );
-}
